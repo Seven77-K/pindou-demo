@@ -1,0 +1,162 @@
+/* 列表页表格：固定行高、无内部滚动条，放不下的数据走分页 */
+:root {
+  --list-table-row-h: 52px;
+  --list-table-head-h: 38px;
+}
+
+.page-card > .table-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow: visible;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.page-card > .table-wrap > table.data-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.page-card > .table-wrap > table.data-table thead th {
+  position: static;
+  top: auto;
+  height: var(--list-table-head-h);
+  max-height: var(--list-table-head-h);
+  padding: 0 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  background: var(--color-pale);
+}
+
+.page-card > .table-wrap > table.data-table tbody tr {
+  height: var(--list-table-row-h) !important;
+  max-height: var(--list-table-row-h) !important;
+  box-sizing: border-box;
+}
+
+.page-card > .table-wrap > table.data-table tbody td {
+  height: var(--list-table-row-h) !important;
+  max-height: var(--list-table-row-h) !important;
+  padding: 0 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-card > .table-wrap > table.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.page-card > .table-wrap > table.data-table tbody tr.row-empty td,
+.page-card > .table-wrap > table.data-table tbody tr:has(.empty-cell) td {
+  height: var(--list-table-row-h) !important;
+  max-height: var(--list-table-row-h) !important;
+}
+
+.page-card > .table-wrap > table.data-table tbody td.col-thumb,
+.page-card > .table-wrap > table.data-table tbody td[class*='-thumb'] {
+  padding: 6px;
+  line-height: 0;
+}
+
+.page-card > .table-wrap [class*='-thumb-wrap'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.page-card > .table-wrap img[class*='-thumb'] {
+  display: block;
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-pale);
+}
+
+.page-card > .table-wrap [class*='-thumb-placeholder'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px dashed var(--color-border);
+  border-radius: 6px;
+  background: var(--color-pale);
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.page-card > .table-wrap > table.data-table tbody td.col-note,
+.page-card > .table-wrap > table.data-table tbody td[class*='col-note'] {
+  white-space: normal;
+}
+
+.page-card > .table-wrap > table.data-table tbody td.col-action,
+.page-card > .table-wrap > table.data-table tbody td:has(.action-links) {
+  white-space: normal;
+}
+
+.page-card > .pagination {
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.page-card > .pagination .pagination-total {
+  margin-right: auto;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.page-card > .pagination .page-info {
+  color: var(--color-text-regular);
+  font-size: 13px;
+}
+
+.page-card > .pagination .page-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--color-text-regular);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-card > .pagination .page-btn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.page-card > .pagination .page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

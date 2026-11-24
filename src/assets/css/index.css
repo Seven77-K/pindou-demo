@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-peach: #fad0c4;
+  --color-lavender: #ffd1ff;
+  --color-accent: #a83858;
+  --color-accent-deep: #8b2d4a;
+  --color-text-primary: #3d2a32;
+  --color-text-regular: #52404a;
+  --color-text-secondary: #6e5660;
+  --color-pale: #fff5f8;
+  --color-border: #f0e4ea;
+  --gradient-main: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+
+  --el-color-primary: #a83858;
+  --el-color-primary-light-3: #c46a82;
+  --el-color-primary-light-5: #d492a8;
+  --el-color-primary-light-7: #e4b8c8;
+  --el-color-primary-light-8: #efced8;
+  --el-color-primary-light-9: #f7e8ee;
+  --el-color-primary-dark-2: #8b2d4a;
+}
+
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--color-text-regular);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+table th,
+table td {
+  text-align: center;
+}
